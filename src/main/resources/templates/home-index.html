@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+</head>
+<body>
+    <p th:text="'用户ID：' +${uid}"></p>
+    <p th:text="'用户名称：' + ${name}"></p>
+    <hr/>
+    <div th:object="${user}">
+        <p th:text="'用户编号：' + *{id}"></p>
+        <p th:text="'用户姓名：' + *{name}"></p>
+        <p th:text="'用户电话：' + *{phone}"></p>
+        <p th:text="'用户邮箱：' + *{email}"></p>
+    </div>
+</body>
+</html>
